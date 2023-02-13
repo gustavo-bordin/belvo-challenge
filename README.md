@@ -37,12 +37,6 @@ Create the container:
 $ docker-compose build
 ```
 
-Start the container:
-
-```
-$ docker-compose build
-```
-
 ### 1.4. Running:
 
 Now you have a container with python, scrapy and any other required dependency already set up. You just need to run it:
