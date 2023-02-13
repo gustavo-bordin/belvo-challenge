@@ -2,7 +2,7 @@
 
 This section provides a step-by-step guide for setting up and running the project on your local machine.
 
-#### 1.1. Downloading dependencies.
+### 1.1. Downloading dependencies.
 
 This project utilizes the technologies of `Scrapy`, `Python`, `Docker`, and `Docker Compose`. To run the project locally, you will need to download and install Docker and Docker Compose. Docker will take care of downloading the rest of the required dependencies, ensuring a seamless setup experience.
 
@@ -11,7 +11,7 @@ This project utilizes the technologies of `Scrapy`, `Python`, `Docker`, and `Doc
 [Click here](https://www.docker.com/products/docker-desktop/) to download Docker
 [Click here](https://docs.docker.com/compose/install/) to download Docker Compose
 
-#### 1.2. Cloning.
+### 1.2. Cloning.
 
 Before you can clone this project, it is necessary to have Git installed on your machine. If you do not have Git installed, you can download it from [here](https://git-scm.com/downloads).
 
@@ -23,7 +23,7 @@ $ git clone url && cd
 
 The above command will clone the project repository to your local machine and automatically navigate into the newly created folder.
 
-#### 1.3. Installing dependencies
+### 1.3. Installing dependencies
 
 Upon cloning this repository, you will have access to the script files but not the necessary dependencies such as Scrapy and Python. To ensure everything is installed and ready to run, we will utilize Docker and Docker Compose to create a container with all the required components. This approach simplifies the installation process and ensures that the environment is consistent and easily reproducible.
 
@@ -39,7 +39,7 @@ Start the container:
 $ docker-compose build
 ```
 
-#### 1.4. Running:
+### 1.4. Running:
 
 Now you have a container with python, scrapy and any other required dependency already set up. You just need to run it:
 
@@ -64,7 +64,7 @@ You have the flexibility to run the specified command as many times as you need.
 
 In this section, I have documented the steps taken to diagnose the issue and find a solution, including the amount of time spent on each step.
 
-#### 2.1. Identifying blockers (30m)
+### 2.1. Identifying blockers (30m)
 
 When reading the problem description, I understood that I would need to create a script that makes 5 POST requests. To start, I manually tried to submit a vote on the website.
 
@@ -76,7 +76,7 @@ This led me to question whether using multiple browsers could allow me to submit
 
 However, my hypothesis was incorrect. When I tried using three different browsers, the third vote was still blocked. This was as I had anticipated, as the description stated that GBC was also taking into account the OS in addition to the user-agents. To bypass this, I would need to fake my OS as well.
 
-#### 2.2. Understanding how to mimic the browser behavior (30m)
+### 2.2. Understanding how to mimic the browser behavior (30m)
 
 To make my script work, I needed to replicate the behavior of a browser. To do this, I started by observing the steps required to submit a vote. I opened the developer tools in the network tab and began tracking my actions.
 
@@ -90,7 +90,7 @@ Next, I replicated the URL and requested the file daxiongmao.js, which is where 
 
 With all the information I needed to submit a vote, I was able to start writing my Python script.
 
-# 2.3. Writing the Python script (4h)
+### 2.3. Writing the Python script (4h)
 
 I decided to use Scrapy for my project because i know it, i like it, it's a powerful tool and it's commonly used within Belvo. It is also easy to manage middlewares and failures ;)
 
@@ -108,6 +108,6 @@ Next, I needed to pass an argument to the spider to determine if the Pandas woul
 
 The results of the voting process can be viewed in both the spider logs and in the generated election_result.json file. This file is created once all five votes have been cast.
 
-# 2.4 Refactoring & Documenting (1h)
+### 2.4 Refactoring & Documenting (1h)
 
 Finally, I decided to refactor my code by creating a separate class, "Parser", to extract data. This way, my crawler would only contain the navigation logic. The Parser class has several subclasses, each focused on a specific page, making it easier to identify where each method is being used
