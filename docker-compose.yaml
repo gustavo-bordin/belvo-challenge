@@ -1,0 +1,6 @@
+version: "3"
+services:
+  vote-spider:
+    build: .
+    volumes:
+      - ./results:/app/results
