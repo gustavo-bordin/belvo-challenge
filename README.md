@@ -8,8 +8,8 @@ This project utilizes the technologies of `Scrapy`, `Python`, `Docker`, and `Doc
 
 > ⚠️ **Please note: if you choose to install Docker via Docker Desktop, Docker Compose will be automatically installed as well.** ⚠️
 
-[Click here](https://www.docker.com/products/docker-desktop/) to download Docker
-[Click here](https://docs.docker.com/compose/install/) to download Docker Compose
+- [Click here](https://www.docker.com/products/docker-desktop/) to download Docker
+- [Click here](https://docs.docker.com/compose/install/) to download Docker Compose
 
 ### 1.2. Cloning.
 
