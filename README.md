@@ -56,7 +56,8 @@ $ docker-compose up -d
 Start the crawler
 
 > You can choose if the pandas will burn or live by changing the `final_decision` argument.
-> `1 - Will live` > `0 - Will die`
+- `1 - Will live` 
+- `0 - Will die`
 
 ```
 $ docker-compose exec vote-spider scrapy runspider spider.py -a final_decision=0
